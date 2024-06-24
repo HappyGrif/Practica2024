@@ -43,9 +43,9 @@
             this.nbrb_CNY_label = new System.Windows.Forms.Label();
             this.nbrb_label = new System.Windows.Forms.Label();
             this.BelWeb_label = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.BelWeb_EUR_label = new System.Windows.Forms.Label();
+            this.BelWeb_RUB_label = new System.Windows.Forms.Label();
+            this.BelWeb_CNY_label = new System.Windows.Forms.Label();
             this.BB_label = new System.Windows.Forms.Label();
             this.bb_EUR_label = new System.Windows.Forms.Label();
             this.bb_RUB_label = new System.Windows.Forms.Label();
@@ -216,35 +216,35 @@
             this.BelWeb_label.TabIndex = 9;
             this.BelWeb_label.Text = "БелВеб";
             // 
-            // label7
+            // BelWeb_EUR_label
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(563, 137);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 20);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "label_BelWeb";
+            this.BelWeb_EUR_label.AutoSize = true;
+            this.BelWeb_EUR_label.Location = new System.Drawing.Point(563, 137);
+            this.BelWeb_EUR_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.BelWeb_EUR_label.Name = "BelWeb_EUR_label";
+            this.BelWeb_EUR_label.Size = new System.Drawing.Size(107, 20);
+            this.BelWeb_EUR_label.TabIndex = 10;
+            this.BelWeb_EUR_label.Text = "label_BelWeb";
             // 
-            // label8
+            // BelWeb_RUB_label
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(563, 181);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 20);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "label_BelWeb";
+            this.BelWeb_RUB_label.AutoSize = true;
+            this.BelWeb_RUB_label.Location = new System.Drawing.Point(563, 181);
+            this.BelWeb_RUB_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.BelWeb_RUB_label.Name = "BelWeb_RUB_label";
+            this.BelWeb_RUB_label.Size = new System.Drawing.Size(107, 20);
+            this.BelWeb_RUB_label.TabIndex = 11;
+            this.BelWeb_RUB_label.Text = "label_BelWeb";
             // 
-            // label9
+            // BelWeb_CNY_label
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(563, 226);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(107, 20);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "label_BelWeb";
+            this.BelWeb_CNY_label.AutoSize = true;
+            this.BelWeb_CNY_label.Location = new System.Drawing.Point(563, 226);
+            this.BelWeb_CNY_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.BelWeb_CNY_label.Name = "BelWeb_CNY_label";
+            this.BelWeb_CNY_label.Size = new System.Drawing.Size(107, 20);
+            this.BelWeb_CNY_label.TabIndex = 12;
+            this.BelWeb_CNY_label.Text = "label_BelWeb";
             // 
             // BB_label
             // 
@@ -296,9 +296,9 @@
             this.Controls.Add(this.bb_RUB_label);
             this.Controls.Add(this.bb_EUR_label);
             this.Controls.Add(this.BB_label);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.BelWeb_CNY_label);
+            this.Controls.Add(this.BelWeb_RUB_label);
+            this.Controls.Add(this.BelWeb_EUR_label);
             this.Controls.Add(this.BelWeb_label);
             this.Controls.Add(this.nbrb_label);
             this.Controls.Add(this.nbrb_CNY_label);
@@ -341,9 +341,9 @@
         private System.Windows.Forms.Label nbrb_CNY_label;
         private System.Windows.Forms.Label nbrb_label;
         private System.Windows.Forms.Label BelWeb_label;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label BelWeb_EUR_label;
+        private System.Windows.Forms.Label BelWeb_RUB_label;
+        private System.Windows.Forms.Label BelWeb_CNY_label;
         private System.Windows.Forms.Label BB_label;
         private System.Windows.Forms.Label bb_EUR_label;
         private System.Windows.Forms.Label bb_RUB_label;

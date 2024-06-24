@@ -62,25 +62,67 @@ namespace Practica
                             string content = await response.Content.ReadAsStringAsync();
                             var exchangeRates = JsonConvert.DeserializeObject<List<ExchangeRate_BelWeb>>(content);
 
-                            var currentRate = exchangeRates.Find(rate =>
+                            var currentRateUSD = exchangeRates.Find(rate =>
                              rate.SourceCurrency == "USD" &&
                              rate.TargetCurrency == "BYN");
 
 
-                            if (currentRate != null)
+                            if (currentRateUSD != null)
                             {
-                                BelWeb_USD_label.Text = $"Текущий курс {currentRate.SourceCurrency} к {currentRate.TargetCurrency}: {currentRate.ExchangeRate}";
+                                BelWeb_USD_label.Text = $"Текущий курс {currentRateUSD.SourceCurrency} к {currentRateUSD.TargetCurrency}: {currentRateUSD.ExchangeRate}";
                             }
                             else
                             {
                                 BelWeb_USD_label.Text = "Курс не найден.";
                             }
-                           
+
+                        var currentRateEUR = exchangeRates.Find(rate =>
+                         rate.SourceCurrency == "EUR" &&
+                         rate.TargetCurrency == "BYN");
+
+
+                        if (currentRateEUR != null)
+                        {
+                            BelWeb_EUR_label.Text = $"Текущий курс {currentRateEUR.SourceCurrency} к {currentRateEUR.TargetCurrency}: {currentRateEUR.ExchangeRate}";
                         }
+                        else
+                        {
+                            BelWeb_EUR_label.Text = "Курс не найден.";
+                        }
+
+                        var currentRateRUB = exchangeRates.Find(rate =>
+                             rate.SourceCurrency == "RUR" &&
+                             rate.TargetCurrency == "BYN");
+
+
+                        if (currentRateRUB != null)
+                        {
+                            BelWeb_RUB_label.Text = $"Текущий курс {currentRateRUB.SourceCurrency} к {currentRateRUB.TargetCurrency}: {currentRateRUB.ExchangeRate}";
+                        }
+                        else
+                        {
+                            BelWeb_RUB_label.Text = "Курс не найден.";
+                        }
+                        var currentRateCNY = exchangeRates.Find(rate =>
+                            rate.SourceCurrency == "CNY" &&
+                            rate.TargetCurrency == "BYN");
+
+
+                        if (currentRateCNY != null)
+                        {
+                            BelWeb_CNY_label.Text = $"Текущий курс {currentRateCNY.SourceCurrency} к {currentRateCNY.TargetCurrency}: {currentRateCNY.ExchangeRate}";
+                        }
+                        else
+                        {
+                            BelWeb_CNY_label.Text = "Курс не найден.";
+                        }
+                    }
                         else
                         {
                             MessageBox.Show($"Ошибка: {response.StatusCode}");
                         }
+
+
                     }
                 }
                 catch (Exception ex)
@@ -181,6 +223,64 @@ namespace Practica
                             bb_RUB_label.Text = "Курс не найден";
                             bb_CNY_label.Text = "Курс не найден";
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Ошибка: {response.StatusCode}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Исключение: {ex.Message}");
+            }
+        }
+
+        private async void BelWeb_currency(string currency)
+        {
+            try
+            {
+                string apiUrl = "https://kdoapi.bvb.by:8243/currency/v2/banks/BELBBY2X/services?type=currency_exchange";
+
+                using (HttpClient client = new HttpClient())
+                {
+                    HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string content = await response.Content.ReadAsStringAsync();
+                        var exchangeRates = JsonConvert.DeserializeObject<List<ExchangeRate_BelWeb>>(content);
+
+                        var currentRate = exchangeRates.Find(rate =>
+                         rate.SourceCurrency == currency &&
+                         rate.TargetCurrency == "BYN");
+
+
+                        if (currentRate != null)
+                        {
+                            if (currency == "USD")
+                            {
+                                BelWeb_USD_label.Text = $"Текущий курс {currentRate.SourceCurrency} к {currentRate.TargetCurrency}: {currentRate.ExchangeRate}";
+                            }
+                            if (currency == "EUR")
+                            {
+                                BelWeb_EUR_label.Text = $"Текущий курс {currentRate.SourceCurrency} к {currentRate.TargetCurrency}: {currentRate.ExchangeRate}";
+                            }
+                            if (currency == "RUB")
+                            {
+                                BelWeb_RUB_label.Text = $"Текущий курс {currentRate.SourceCurrency} к {currentRate.TargetCurrency}: {currentRate.ExchangeRate}";
+                            }
+                            if (currency == "CNY")
+                            {
+                                BelWeb_CNY_label.Text = $"Текущий курс {currentRate.SourceCurrency} к {currentRate.TargetCurrency}: {currentRate.ExchangeRate}";
+                            }
+
+                        }
+                        else
+                        {
+                            BelWeb_USD_label.Text = "Курс не найден.";
+                        }
+
                     }
                     else
                     {
