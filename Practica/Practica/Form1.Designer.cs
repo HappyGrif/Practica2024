@@ -35,6 +35,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.BelWeb_USD_label = new System.Windows.Forms.Label();
             this.nbrb_USD_label = new System.Windows.Forms.Label();
             this.bb_USD_label = new System.Windows.Forms.Label();
@@ -52,6 +53,7 @@
             this.bb_CNY_label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,6 +81,7 @@
             this.button_map.TabIndex = 3;
             this.button_map.Text = "Карта Отделений";
             this.button_map.UseVisualStyleBackColor = true;
+            this.button_map.Click += new System.EventHandler(this.button_map_Click);
             // 
             // button_Exit
             // 
@@ -102,6 +105,7 @@
             this.button_kyrs.TabIndex = 2;
             this.button_kyrs.Text = "Курсы валют";
             this.button_kyrs.UseVisualStyleBackColor = true;
+            this.button_kyrs.Click += new System.EventHandler(this.button_kyrs_Click);
             // 
             // panel3
             // 
@@ -129,12 +133,41 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel2.Controls.Add(this.gMapControl1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(116, 352);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1084, 340);
             this.panel2.TabIndex = 1;
+            // 
+            // gMapControl1
+            // 
+            this.gMapControl1.Bearing = 0F;
+            this.gMapControl1.CanDragMap = true;
+            this.gMapControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gMapControl1.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gMapControl1.GrayScaleMode = false;
+            this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gMapControl1.LevelsKeepInMemmory = 5;
+            this.gMapControl1.Location = new System.Drawing.Point(0, 0);
+            this.gMapControl1.MarkersEnabled = true;
+            this.gMapControl1.MaxZoom = 2;
+            this.gMapControl1.MinZoom = 2;
+            this.gMapControl1.MouseWheelZoomEnabled = true;
+            this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gMapControl1.Name = "gMapControl1";
+            this.gMapControl1.NegativeMode = false;
+            this.gMapControl1.PolygonsEnabled = true;
+            this.gMapControl1.RetryLoadTile = 0;
+            this.gMapControl1.RoutesEnabled = true;
+            this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gMapControl1.ShowTileGridLines = false;
+            this.gMapControl1.Size = new System.Drawing.Size(1084, 340);
+            this.gMapControl1.TabIndex = 0;
+            this.gMapControl1.Visible = false;
+            this.gMapControl1.Zoom = 0D;
             // 
             // BelWeb_USD_label
             // 
@@ -319,6 +352,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,6 +382,7 @@
         private System.Windows.Forms.Label bb_EUR_label;
         private System.Windows.Forms.Label bb_RUB_label;
         private System.Windows.Forms.Label bb_CNY_label;
+        private GMap.NET.WindowsForms.GMapControl gMapControl1;
     }
 }
 
