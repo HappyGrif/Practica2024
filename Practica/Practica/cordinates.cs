@@ -50,7 +50,7 @@ namespace Practica
             public string Latitude { get; set; }
         }
 
-        public static async Task getMarkes()
+        public static async Task getMarkers()
         {
 
             string apiUrl = "https://belarusbank.by/open-banking/v1.0/banks/AKBBBY2X/branches";
@@ -123,10 +123,10 @@ namespace Practica
             gMapControl1.ShowCenter = false; 
             gMapControl1.ShowTileGridLines = false; 
             gMapControl1.Visible = true;
-            getMarkes();
+            getMarkers();
         }
 
-        private GMarkerGoogle GetMarker(double latitude, double longitude, string[] addressLine, GMarkerGoogleType gMarkerGoogleType = GMarkerGoogleType.red)
+        private GMarkerGoogle GetMarker(double latitude, double longitude, string[] addressLine, GMarkerGoogleType gMarkerGoogleType = GMarkerGoogleType.blue)
         {
             GMarkerGoogle mapMarker = new GMarkerGoogle(new GMap.NET.PointLatLng(latitude , longitude ), gMarkerGoogleType);//широта, долгота, тип маркера
             mapMarker.ToolTip = new GMap.NET.WindowsForms.ToolTips.GMapRoundedToolTip(mapMarker);//всплывающее окно с инфой к маркеру
@@ -135,7 +135,7 @@ namespace Practica
             return mapMarker;
         }
 
-        private GMapOverlay GetOverlayMarkers(List<LocationData> bankCordinate, string name, GMarkerGoogleType gMarkerGoogleType = GMarkerGoogleType.red)
+        private GMapOverlay GetOverlayMarkers(List<LocationData> bankCordinate, string name, GMarkerGoogleType gMarkerGoogleType = GMarkerGoogleType.blue)
         {
             GMapOverlay gMapMarkers = new GMapOverlay(name); // Создание именованного слоя
 

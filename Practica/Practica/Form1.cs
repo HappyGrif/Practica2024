@@ -30,6 +30,7 @@ namespace Practica
             BB.bb_RUB_label = bb_RUB_label;
             BB.bb_CNY_label = bb_CNY_label;
             cordinates.gMapControl1 = gMapControl1;
+            history.chart1 = chart1;
            
         }
 
@@ -43,7 +44,8 @@ namespace Practica
             bb.BBEx();
             BelWeb belWeb = new BelWeb();
             belWeb.BelWebEx();
-
+            
+    
         }
 
         private void button_Exit_Click(object sender, EventArgs e)
@@ -58,6 +60,7 @@ namespace Practica
 
         private void button_map_Click(object sender, EventArgs e)
         {
+            panel2.Visible= false;
             cordinates cordinates = new cordinates();
             cordinates.loadMap();
 
@@ -66,6 +69,30 @@ namespace Practica
         private void button_kyrs_Click(object sender, EventArgs e)
         {
             gMapControl1.Visible = false;
+            panel2.Visible = true;
+        }
+
+        private void gMapControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            history history = new history();
+            history.HistoryEx(7);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            history history = new history();
+            history.HistoryEx(30);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            history history = new history();
+            history.HistoryEx(365);
         }
     }
  }
